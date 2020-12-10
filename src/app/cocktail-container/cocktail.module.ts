@@ -8,6 +8,7 @@ import { CocktailContainerComponent } from './cocktail-container.component';
 import { CocktailEditComponent } from './cocktail-edit/cocktail-edit.component';
 import { FilterPipe } from '../shared/filters/filter.pipe'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { cocktailRouting } from './cocktail.routing';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    cocktailRouting
   ]
 })
 export class CocktailModule { }

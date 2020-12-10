@@ -7,7 +7,7 @@ import { ActiveDirective } from './shared/directives/active.directive';
 import { AppRouting } from './app.routing'
 import { CocktailModule } from './cocktail-container/cocktail.module'
 import { ShareModule } from './shared/modules/shared.module';
-import { PanierModule } from './panier/panier.module';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +20,6 @@ import { PanierModule } from './panier/panier.module';
     HttpClientModule,
     AppRouting,
     CocktailModule,
-    PanierModule,
     ShareModule
   ],
   providers: [],

@@ -5,8 +5,7 @@ import { HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { ActiveDirective } from './shared/directives/active.directive';
 import { AppRouting } from './app.routing'
-import { PanierService } from './shared/services/panier.service';
-import {CocktailModule} from './cocktail-container/cocktail.module'
+import { CocktailModule } from './cocktail-container/cocktail.module'
 import { ShareModule } from './shared/modules/shared.module';
 import { PanierModule } from './panier/panier.module';
 
@@ -24,7 +23,7 @@ import { PanierModule } from './panier/panier.module';
     PanierModule,
     ShareModule
   ],
-  providers: [PanierService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

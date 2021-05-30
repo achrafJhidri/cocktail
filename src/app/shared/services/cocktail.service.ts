@@ -8,16 +8,22 @@ import {Ingredient} from '../model/Ingredient.model'
 @Injectable()
 export class CocktailService {
 
-  
- 
-  public cocktails : BehaviorSubject<Cocktail[]> = new BehaviorSubject(null);
+  public cocktails : BehaviorSubject<Cocktail[]> = new BehaviorSubject<Cocktail[]>([]);
   constructor(private httpClient : HttpClient) {
       this.initCocktail()
    }
 
   initCocktail() : void {
-    this.httpClient.get<Cocktail[]>("https://cocktails-5e905.firebaseio.com/cocktails.json")
-    .subscribe( (cocktails : Cocktail[]) => this.cocktails.next(cocktails))
+
+    this.httpClient.get<Cocktail[]>("https://cocktail-test-df545-default-rtdb.firebaseio.com/cocktails.json")
+    .subscribe( (cocktails : Cocktail[]) => {
+      this.cocktails.next(cocktails)
+      if (this.cocktails.value === null )
+          this.cocktails.next([]);
+    }
+      )
+
+    
   }
 
 
@@ -30,7 +36,7 @@ export class CocktailService {
   }
   
   addCocktail(cocktail :Cocktail  ) : void {
-    const cocktails = this.cocktails.value.slice(); 
+    const cocktails = this.cocktails.value.slice() ; 
     cocktails.push(new Cocktail(cocktail.name,cocktail.description,cocktail.img,cocktail.ingredients.map(
       ingredient => new Ingredient(ingredient.name,ingredient.quantity)
     )))

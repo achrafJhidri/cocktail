@@ -33,6 +33,7 @@ export class CocktailsDetailsComponent implements OnInit {
     })
   }
   addToPanier():void{
+    if(this.selectedCocktail.ingredients?.length > 0)
     this.panierService.addIngredients(this.selectedCocktail.ingredients);
   }
   getUrl() : string[] {

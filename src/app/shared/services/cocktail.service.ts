@@ -54,7 +54,7 @@ export class CocktailService {
     this.save();
   }
   save() {
-    this.httpClient.put("https://cocktails-5e905.firebaseio.com/cocktails.json",this.cocktails.value).subscribe();
+    this.httpClient.put("https://cocktail-test-df545-default-rtdb.firebaseio.com/cocktails.json",this.cocktails.value).subscribe();
   }
   
 }
